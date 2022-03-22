@@ -103,7 +103,7 @@ const Introduction = () => (
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://reactjs.org/docs/render-props.html"
+                  href="https://kentcdodds.com/blog/compound-components-with-react-hooks"
                 >
                   Compound components
                 </a>{' '}
@@ -113,7 +113,7 @@ const Introduction = () => (
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://reactjs.org/docs/render-props.html"
+                  href="https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks"
                 >
                   Reducer-based components
                 </a>{' '}
