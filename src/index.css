@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100vh;
+}
+
+@media (max-width: 737px) {
+  body {
+    min-height: 100vh;
+  }
+}
