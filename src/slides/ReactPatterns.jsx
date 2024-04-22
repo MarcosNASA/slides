@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'
 
-import { PATH_REACT_PATTERNS } from '../constants';
-import { useSlides, useKeyboardNavigation } from '../utils/hooks';
+import { PATH_REACT_PATTERNS } from '../constants'
+import { useSlides, useKeyboardNavigation } from '../utils/hooks'
 
 import {
   SlideActions,
@@ -17,15 +16,15 @@ import {
   SlideSectionSubtitle,
   SlideSectionTitle,
   SlideTitle,
-} from './ui/Slide';
+} from './ui/Slide'
 
 export const ReactPatterns = () => {
   const { nextSlide, previousSlide } = useSlides({
     path: PATH_REACT_PATTERNS,
     numberOfSlides: reactPatternsSlides.length,
-  });
+  })
 
-  useKeyboardNavigation({ nextSlide, previousSlide });
+  useKeyboardNavigation({ nextSlide, previousSlide })
 
   return (
     <>
@@ -34,19 +33,17 @@ export const ReactPatterns = () => {
       </SlideHeader>
 
       <SlideSection>
-        <Switch>
+        <Routes>
           {reactPatternsSlides.map((slide) => (
             <Route
               key={slide.id}
-              path={`${PATH_REACT_PATTERNS}/slide/${slide.id}`}
-              component={slide.component}
+              path={`/slide/${slide.id}`}
+              element={slide.getElement()}
             />
           ))}
 
-          <Route>
-            <p role="alert">Oops, something went wrong</p>
-          </Route>
-        </Switch>
+          <Route element={<p role="alert">Oops, something went wrong</p>} />
+        </Routes>
       </SlideSection>
 
       <SlideActions>
@@ -54,8 +51,8 @@ export const ReactPatterns = () => {
         <SlideLink to={nextSlide}>Siguiente</SlideLink>
       </SlideActions>
     </>
-  );
-};
+  )
+}
 
 const Introduction = () => (
   <>
@@ -65,7 +62,7 @@ const Introduction = () => (
 
     <SlideSectionContent>
       <section>
-        <SlideSectionSubtitle>What this chat is not about</SlideSectionSubtitle>
+        <SlideSectionSubtitle>What this talk is not about</SlideSectionSubtitle>
         <SlideList>
           <SlideListItem>Super deep dive 🤿</SlideListItem>
           <SlideListItem>My own opinions 🤷🏼‍♂️</SlideListItem>
@@ -74,7 +71,7 @@ const Introduction = () => (
       </section>
 
       <section>
-        <SlideSectionSubtitle>What this chat is about</SlideSectionSubtitle>
+        <SlideSectionSubtitle>What this talk is about</SlideSectionSubtitle>
         <SlideList>
           <SlideListItem>
             How to recognize the most common React patterns
@@ -126,7 +123,7 @@ const Introduction = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const How = () => (
   <>
@@ -152,7 +149,7 @@ const How = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const PropsGettersIntro = () => (
   <>
@@ -213,7 +210,7 @@ const Component = () =>
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const PropsGetters = () => (
   <>
@@ -283,7 +280,7 @@ const PropsGetters = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const RenderProps = () => (
   <>
@@ -360,7 +357,7 @@ const RenderProps = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const CompoundComponents = () => (
   <>
@@ -487,7 +484,7 @@ const CompoundComponents = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const ReducerBasedComponents = () => (
   <>
@@ -547,35 +544,35 @@ const ReducerBasedComponents = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const reactPatternsSlides = [
   {
     id: 1,
-    component: Introduction,
+    getElement: () => <Introduction />,
   },
   {
     id: 2,
-    component: How,
+    getElement: () => <How />,
   },
   {
     id: 3,
-    component: PropsGettersIntro,
+    getElement: () => <PropsGettersIntro />,
   },
   {
     id: 4,
-    component: PropsGetters,
+    getElement: () => <PropsGetters />,
   },
   {
     id: 5,
-    component: RenderProps,
+    getElement: () => <RenderProps />,
   },
   {
     id: 6,
-    component: CompoundComponents,
+    getElement: () => <CompoundComponents />,
   },
   {
     id: 7,
-    component: ReducerBasedComponents,
+    getElement: () => <ReducerBasedComponents />,
   },
-];
+]

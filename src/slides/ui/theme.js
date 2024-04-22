@@ -1,5 +1,5 @@
-export const tablet = `@media screen and (min-width: 600px)`;
-export const desktop = `@media screen and (min-width: 1050px)`;
+export const tablet = `@media screen and (min-width: 600px)`
+export const desktop = `@media screen and (min-width: 1050px)`
 
 export const colors = {
   light: {
@@ -25,12 +25,12 @@ export const colors = {
     200: '#ef4d8a',
     300: '#d7457c',
   },
-};
+}
 
 export const fontWeight = {
   regular: 400,
   bold: 800,
-};
+}
 
 export const font = {
   primary: "Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif",
@@ -43,4 +43,4 @@ export const font = {
   weight: {
     bold: '800',
   },
-};
+}

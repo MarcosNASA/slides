@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'
 
-import { PATH_TESTING_TROPHY } from '../constants';
-import { useSlides, useKeyboardNavigation } from '../utils/hooks';
+import { PATH_TESTING_TROPHY } from '../constants'
+import { useSlides, useKeyboardNavigation } from '../utils/hooks'
 
 import {
   Img,
@@ -17,18 +16,18 @@ import {
   SlideSectionSubtitle,
   SlideSectionTitle,
   SlideTitle,
-} from './ui/Slide';
+} from './ui/Slide'
 
-import testingTrophy from '../assets/testing-trophy.jpeg';
-import testingTrophyWhy from '../assets/testing-trophy-why.png';
+import testingTrophy from '../assets/testing-trophy.jpeg'
+import testingTrophyWhy from '../assets/testing-trophy-why.png'
 
 export const TestingTrophy = () => {
   const { nextSlide, previousSlide } = useSlides({
     path: PATH_TESTING_TROPHY,
     numberOfSlides: testingTrophySlides.length,
-  });
+  })
 
-  useKeyboardNavigation({ previousSlide, nextSlide });
+  useKeyboardNavigation({ previousSlide, nextSlide })
 
   return (
     <>
@@ -37,19 +36,17 @@ export const TestingTrophy = () => {
       </SlideHeader>
 
       <SlideSection>
-        <Switch>
+        <Routes>
           {testingTrophySlides.map((slide) => (
             <Route
               key={slide.id}
-              path={`${PATH_TESTING_TROPHY}/slide/${slide.id}`}
-              component={slide.component}
+              path={`/slide/${slide.id}`}
+              element={slide.getElement()}
             />
           ))}
 
-          <Route>
-            <p role="alert">Oops, something went wrong</p>
-          </Route>
-        </Switch>
+          <Route element={<p role="alert">Oops, something went wrong</p>} />
+        </Routes>
       </SlideSection>
 
       <SlideActions>
@@ -57,8 +54,8 @@ export const TestingTrophy = () => {
         <SlideLink to={nextSlide}>Siguiente</SlideLink>
       </SlideActions>
     </>
-  );
-};
+  )
+}
 
 const Introduction = () => (
   <>
@@ -68,7 +65,7 @@ const Introduction = () => (
 
     <SlideSectionContent>
       <section>
-        <SlideSectionSubtitle>What this chat is not about</SlideSectionSubtitle>
+        <SlideSectionSubtitle>What this talk is not about</SlideSectionSubtitle>
         <SlideList>
           <SlideListItem>My own opinions 🤷🏼‍♂️</SlideListItem>
           <SlideListItem>Convincing anyone on doing anything ❌</SlideListItem>
@@ -76,7 +73,7 @@ const Introduction = () => (
       </section>
 
       <section>
-        <SlideSectionSubtitle>What this chat is about</SlideSectionSubtitle>
+        <SlideSectionSubtitle>What this talk is about</SlideSectionSubtitle>
         <SlideList>
           <SlideListItem>
             <a href="https://testing-library.com/">Testing Library</a>'s
@@ -102,7 +99,7 @@ const Introduction = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const Premise = () => (
   <>
@@ -127,7 +124,7 @@ const Premise = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const WriteTests = () => (
   <>
@@ -140,19 +137,19 @@ const WriteTests = () => (
       </section>
     </SlideSectionContent>
   </>
-);
+)
 
 const testingTrophySlides = [
   {
     id: 1,
-    component: Introduction,
+    getElement: () => <Introduction />,
   },
   {
     id: 2,
-    component: Premise,
+    getElement: () => <Premise />,
   },
   {
     id: 3,
-    component: WriteTests,
+    getElement: () => <WriteTests />,
   },
-];
+]

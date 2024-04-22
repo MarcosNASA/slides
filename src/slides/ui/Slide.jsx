@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-import { colors, font, desktop, tablet } from './theme';
+import { colors, font, desktop, tablet } from './theme'
 
 export const NavBar = styled.nav`
   grid-area: 1 / 1 / 3 / 1;
@@ -11,8 +11,8 @@ export const NavBar = styled.nav`
   align-items: center;
   gap: 100px;
   height: 100%;
-`;
-NavBar.displayName = 'NavBar';
+`
+NavBar.displayName = 'NavBar'
 
 export const Slide = styled.article`
   display: grid;
@@ -29,8 +29,8 @@ export const Slide = styled.article`
     padding: 42px 78px;
     height: 100vh;
   }
-`;
-Slide.displayName = 'Slide';
+`
+Slide.displayName = 'Slide'
 
 export const SlideLink = styled(Link)`
   color: ${colors.dark[100]};
@@ -48,11 +48,11 @@ export const SlideLink = styled(Link)`
   ${desktop} {
     font-size: ${font.larger};
   }
-`;
-SlideLink.displayName = 'SlideLink';
+`
+SlideLink.displayName = 'SlideLink'
 
-export const SlideHeader = styled.header``;
-SlideHeader.displayName = 'SlideHeader';
+export const SlideHeader = styled.header``
+SlideHeader.displayName = 'SlideHeader'
 
 export const SlideTitle = styled.h1`
   margin-bottom: 9px;
@@ -66,8 +66,8 @@ export const SlideTitle = styled.h1`
   ${desktop} {
     font-size: ${font.largest};
   }
-`;
-SlideTitle.displayName = 'SlideTitle';
+`
+SlideTitle.displayName = 'SlideTitle'
 
 export const SlideSubitle = styled.h2`
   margin-bottom: 9px;
@@ -84,8 +84,8 @@ export const SlideSubitle = styled.h2`
   ${desktop} {
     font-size: ${font.larger};
   }
-`;
-SlideSubitle.displayName = 'SlideSubitle';
+`
+SlideSubitle.displayName = 'SlideSubitle'
 
 export const SlideSection = styled.section`
   overflow: auto;
@@ -97,11 +97,13 @@ export const SlideSection = styled.section`
   section:not(:last-child) {
     margin-bottom: 30px;
   }
-`;
-SlideSection.displayName = 'SlideSection';
+`
+SlideSection.displayName = 'SlideSection'
 
-export const SlideSectionHeader = styled.header``;
-SlideSectionHeader.displayName = 'SlideSectionHeader';
+export const SlideSectionHeader = styled.header`
+  margin-bottom: 18px;
+`
+SlideSectionHeader.displayName = 'SlideSectionHeader'
 
 export const SlideSectionTitle = styled.h3`
   font-size: ${font.normal};
@@ -110,8 +112,8 @@ export const SlideSectionTitle = styled.h3`
   ${desktop} {
     font-size: ${font.larger};
   }
-`;
-SlideSectionTitle.displayName = 'SlideSectionTitle';
+`
+SlideSectionTitle.displayName = 'SlideSectionTitle'
 
 export const SlideSectionSubtitle = styled.h4`
   margin-bottom: 12px;
@@ -126,8 +128,8 @@ export const SlideSectionSubtitle = styled.h4`
   ${desktop} {
     font-size: ${font.normal};
   }
-`;
-SlideSectionSubtitle.displayName = 'SlideSectionSubtitle';
+`
+SlideSectionSubtitle.displayName = 'SlideSectionSubtitle'
 
 export const SlideSectionContent = styled.div`
   display: flex;
@@ -173,8 +175,8 @@ export const SlideSectionContent = styled.div`
       font-size: ${font.large};
     }
   }
-`;
-SlideSectionContent.displayName = 'SlideSectionContent';
+`
+SlideSectionContent.displayName = 'SlideSectionContent'
 
 export const SlideList = styled.ul`
   margin-left: 30px;
@@ -187,15 +189,15 @@ export const SlideList = styled.ul`
       margin-bottom: 9px;
     }
   }
-`;
-SlideList.displayName = 'SlideList';
+`
+SlideList.displayName = 'SlideList'
 
 export const SlideListItem = styled.li`
   margin: 0 0 9px;
   padding: 0;
 
   :last-child {
-    margin: 0;
+    margin-bottom: 0;
   }
 
   p {
@@ -203,8 +205,8 @@ export const SlideListItem = styled.li`
       margin-bottom: 9px;
     }
   }
-`;
-SlideListItem.displayName = 'SlideListItem';
+`
+SlideListItem.displayName = 'SlideListItem'
 
 export const SlideSectionItem = styled.div`
   margin-bottom: 18px;
@@ -212,21 +214,21 @@ export const SlideSectionItem = styled.div`
   :last-child {
     margin: 0;
   }
-`;
+`
 
 export const SlideActions = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-SlideActions.displayName = 'SlideActions';
+`
+SlideActions.displayName = 'SlideActions'
 
 export const Gallery = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   place-items: center;
   gap: 10px;
-`;
+`
 
 export const Img = styled.img`
   display: block;
@@ -236,10 +238,10 @@ export const Img = styled.img`
   :last-child {
     margin: 0;
   }
-`;
+`
 
 export const SlideCode = ({ children }) => (
   <code>
     <pre>{children}</pre>
   </code>
-);
+)
